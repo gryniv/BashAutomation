@@ -22,7 +22,7 @@ eval $cmd
 #unzip hybris 
 unzip ~/IdeaProjects/"$hproject".zip "hybris/*" -d ~/IdeaProjects/"$hproject" 
 # create config dir & copy config-local to config
-cp -avr ~/IdeaProjects/"$hproject"/hybris/config-local/* ~/IdeaProjects/"$hproject"/hybris/config
+cp -avr ~/IdeaProjects/"$hproject"/hybris/hybris/config-local/* ~/IdeaProjects/"$hproject"/hybris/config
 #take from config.prop data for DB
 function prop { 
     grep "^\\s*${1}" ~/IdeaProjects/"$hproject"/hybris/config/local.properties|cut -d'=' -f2
