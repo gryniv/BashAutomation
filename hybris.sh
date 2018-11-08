@@ -10,7 +10,7 @@ sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install git mysql-server mysql-client curl oracle-java8-installer unzip -y
 #download rep from git
-mkdir -p ~/IdeaProjects/"$hproject"/hybris/config && cd ~/IdeaProjects/"$hproject";git init;git remote add origin $gitURL;git fetch;git checkout -t origin/$gitbranch
+mkdir -p ~/IdeaProjects/"$hproject"/hybris/config && cd ~/IdeaProjects/"$hproject"/hybris;git init;git remote add origin $gitURL;git fetch;git checkout -t origin/$gitbranch
 #download hybris gdrive
 ggID=$(echo "$gURL" | egrep -o '(\w|-){26,}')
 ggURL='https://drive.google.com/uc?export=download'
@@ -22,7 +22,8 @@ eval $cmd
 #unzip hybris 
 unzip ~/IdeaProjects/"$hproject".zip "hybris/*" -d ~/IdeaProjects/"$hproject" 
 # create config dir & copy config-local to config
-cp -avr ~/IdeaProjects/"$hproject"/hybris/config-local/* ~/IdeaProjects/"$hproject"/hybris/config
+cp -avr ~/IdeaProjects/"$hproject"/hybris/hybris/config-local/* ~/IdeaProjects/"$hproject"/hybris/config
+cp -avr ~/IdeaProjects/"$hproject"/hybris/hybris/bin/* ~/IdeaProjects/"$hproject"/hybris/bin
 #take from config.prop data for DB
 function prop { 
     grep "^\\s*${1}" ~/IdeaProjects/"$hproject"/hybris/config/local.properties|cut -d'=' -f2
