@@ -7,15 +7,6 @@ YELLOW='\033[1;33m'
 NONE='\033[0m'
 RED0='\033[0;31m'
 GREEN0='\033[0;32m'
-HYBRIS (){
-echo
-echo "  █  █    ██ ██    ████     ████    ███    ███"
-echo "  █  █     ███     █  ██    █  █     █     █"
-echo "  ████      █      ████     ████     █     ███"
-echo "  █  █      █      █  ██    █ █      █       █"
-echo "  █  █      █      ████     █ █     ███    ███"
-echo
-}
 CLEOFF() { if [ "$CLEOFF" != 1 ]; then
    clear
 fi }
