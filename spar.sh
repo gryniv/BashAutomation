@@ -58,8 +58,7 @@
         if [ "$projectName" != "spar-egrocery" && "$projectName" != "hervis"]
             then
             echo "Please enter your atx Username and Personal Acces Token:"
-            cd $ProjectDir && gitSubModules
-            cd $ProjectDir && git submodule init && git submodule sync && git submodule update
+            cd $ProjectDir && gitSubModules && git submodule init && git submodule sync && git submodule update
         fi
         cd ~/Downloads && unzipHybris $hybrisArhive $ProjectDir || cd $mainProjectDir && unzipHybris $hybrisArhive $ProjectDir || cd ~/ && unzipHybris $hybrisArhive $ProjectDir || cd ~/Загрузки && unzipHybris $hybrisArhive $ProjectDir || cd ~/Завантаження && unzipHybris $hybrisArhive $ProjectDir
         cd $hybrisBuildPackege && . ./setantenv.sh && ant clean all initialize
