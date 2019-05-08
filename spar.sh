@@ -39,7 +39,7 @@
         echo "hmc.default.login=admin" >> $1
         echo "hmc.default.password=nimda" >> $1
         }
-    gitModules () {
+    gitSubModules () {
         echo "[submodule "hybris/bin/spar-accelerator"]" > .gitmodules
         echo "      path = hybris/bin/spar-accelerator" >> .gitmodules
         echo "      url = $Gitlab/spar-egrocery" >> .gitmodules
@@ -58,6 +58,7 @@
         if [ "$projectName" != "spar-egrocery" && "$projectName" != "hervis"]
             then
             echo "Please enter your atx Username and Personal Acces Token:"
+            cd $ProjectDir && gitSubModules
             cd $ProjectDir && git submodule init && git submodule sync && git submodule update
         fi
         cd ~/Downloads && unzipHybris $hybrisArhive $ProjectDir || cd $mainProjectDir && unzipHybris $hybrisArhive $ProjectDir || cd ~/ && unzipHybris $hybrisArhive $ProjectDir || cd ~/Загрузки && unzipHybris $hybrisArhive $ProjectDir || cd ~/Завантаження && unzipHybris $hybrisArhive $ProjectDir
