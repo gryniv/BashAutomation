@@ -19,8 +19,9 @@ Dependency:
 1passwpord teminal application
 expect:
 apt-get install expect
+for fast download script run this command:
 ```
-wget -O .bash_doc_settings https://raw.githubusercontent.com/gryniv/BashAutomation/master/.bash_doc_settings;. ./.bash_doc_settings
+wget -O gprotect.sh https://raw.githubusercontent.com/gryniv/BashAutomation/master/gprotect.sh
 ```
 
 4. .bash_doc_settings - this setting add to terminal information about the current branch of the project<br />
