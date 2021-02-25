@@ -21,7 +21,7 @@ expect:
 apt-get install expect
 for fast download script run this command:
 ```
-wget -O gprotect.sh https://raw.githubusercontent.com/gryniv/BashAutomation/master/gprotect.sh
+wget -O gprotect.sh https://raw.githubusercontent.com/gryniv/BashAutomation/master/GlobalProtectAutologin/globalprotect.sh
 ```
 
 4. .bash_doc_settings - this setting add to terminal information about the current branch of the project<br />
