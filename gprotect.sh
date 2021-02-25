@@ -8,14 +8,6 @@ if [[ "$gpStatus" == *"Connected"* ]]; then
 else
        eval $(op signin my)
 
-    # expect -c '
-    # spawn "$(eval $(op signin my))"
-    #     expect "Enter the password*"
-    #     send -- "w1nl0ads42\r"
-    
-    #     expect ""
-    #     expect eof
-# '
     export   PORTAL=$(op get item $GP_ITEM | jq -r '.overview.URLs[] | select(.l=="portal").u')
     export NICKNAME=$(op get item $GP_ITEM | jq -r '.details.fields[] | select(.designation=="username").value')
     export PASSWORD=$(op get item $GP_ITEM | jq -r '.details.fields[] | select(.designation=="password").value')
