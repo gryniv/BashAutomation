@@ -12,8 +12,7 @@
       - [Download setup and run GlobalProtect script](#download-setup-and-run-globalprotect-script-1)
 
 ---
-## Low secure script - globalprotect.sh
-`!!!!! This script has full automate login into Globalprotect but include bad practice saving password. !!!!!`
+## globalprotect.sh
 
 Dependency:
 - [Terminal Google authentication](https://github.com/arcanericky/ga-cmd)
@@ -43,14 +42,15 @@ sudo apt-get install expect -y
 ```shell
 wget -O globalprotect.sh https://raw.githubusercontent.com/gryniv/BashAutomation/master/GlobalProtectAutologin/globalprotect.sh
 ```
-Now open globalprotect.sh and input your data into next variables:
+Now open with sudo /etc/environment and add next variables with your data:
 ``` bash
-export PORTAL="mfa-portal.amwayconnect.com"
-export NICKNAME="RUVNAME"
-export PASSWORD="VERY_SECURE_PASSWORD"
+OKTA_PORTAL="mfa-portal.amwayconnect.com"
+OKTA_NICKNAME="RUVNAME"
+OKTA_PASSWORD="VERY_SECURE_PASSWORD"
 ```
 Run:
 ```shell
+source /etc/environment
 . ./globalprotect.sh
 ```
 Script check vpn connection and if vpn is `Connected` after secondary use run disconnect command
